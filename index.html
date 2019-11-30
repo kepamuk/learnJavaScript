@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  var a = {
+    constructor: function (name, age) {
+      this.name = name;
+      this.age = age;
+      return this;
+    },
+    greet: function () {
+      return 'Hello, my name is ' + this.name;
+    }
+  }
+
+  var person = a.constructor('stas', 30);
+  var person1 = a.constructor('lexa', 31);
+
+  console.log(person.name) // stas;
+  console.log(person1.age) // 31;
+
+  console.log(a.greet()) // Hello, my name is lexa
+
+  a.constructor('stas', 30);
+  console.log(a.greet()) // Hello, my name is stas
+
+  var b = {
+    _value: 'test',
+    get value() {
+      return this._value;
+    },
+    set value(val) {
+      document.body.style.backgroundColor = 'red'; // change color body
+      this._value = val.length > 4 ? 'more than 4' : 'val';
+    }
+  };
+
+  console.log(b.value) // test
+  b.value = 'kot'
+  console.log(b.value) // kot
+  b.value = 'narkotiki'
+  console.log(b.value) // more than 4
+
+</script>
+</body>
+</html>
