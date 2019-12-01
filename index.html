@@ -16,11 +16,11 @@
     _value: "stas",
 
     set value(val) {
-      this._value = val;
+      x._value = val;
     },
 
     get value() {
-      return this._value;
+      return x._value;
     }
   };
 
@@ -29,11 +29,11 @@
     name: 'kotiki'
   };
 
-  console.log(kot.value) // stas
-
-  kot.value = 'slon';
-
-  console.log(kot.value) // slon
+  console.log(kot);
+  kot.__proto__._value = "slon";
+  console.log(kot);
+  kot.value = 'kot';
+  console.log(kot);
 
 </script>
 </body>
