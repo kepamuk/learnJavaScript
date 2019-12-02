@@ -12,28 +12,20 @@
 <script>
 
 
-  let x = {
-    _value: "stas",
+  let v = {
+    _name: 321,
+  };
 
-    set value(val) {
-      x._value = val;
-    },
-
-    get value() {
-      return x._value;
+  let f = {
+    __proto__: v,
+    set name(val) {
+      this.__proto__._name = val;
     }
   };
 
-  let kot = {
-    __proto__: x,
-    name: 'kotiki'
-  };
-
-  console.log(kot);
-  kot.__proto__._value = "slon";
-  console.log(kot);
-  kot.value = 'kot';
-  console.log(kot);
+  console.log(f)
+  f.name = 123;
+  console.log(f)
 
 </script>
 </body>
